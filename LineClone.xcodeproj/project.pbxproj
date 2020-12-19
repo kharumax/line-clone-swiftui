@@ -11,6 +11,7 @@
 		4C459F17258E70C100356166 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F16258E70C100356166 /* ContentView.swift */; };
 		4C459F19258E70C500356166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C459F18258E70C500356166 /* Assets.xcassets */; };
 		4C459F1C258E70C500356166 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C459F1B258E70C500356166 /* Preview Assets.xcassets */; };
+		4C459F2A258E72C400356166 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F29258E72C400356166 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		4C459F18258E70C500356166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C459F1B258E70C500356166 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C459F1D258E70C500356166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C459F29258E72C400356166 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +54,12 @@
 		4C459F13258E70C100356166 /* LineClone */ = {
 			isa = PBXGroup;
 			children = (
+				4C459F27258E721A00356166 /* Model */,
+				4C459F26258E721400356166 /* View */,
+				4C459F25258E720000356166 /* ViewModel */,
+				4C459F24258E71EB00356166 /* Service */,
+				4C459F28258E722000356166 /* Utils */,
 				4C459F14258E70C100356166 /* LineCloneApp.swift */,
-				4C459F16258E70C100356166 /* ContentView.swift */,
 				4C459F18258E70C500356166 /* Assets.xcassets */,
 				4C459F1D258E70C500356166 /* Info.plist */,
 				4C459F1A258E70C500356166 /* Preview Content */,
@@ -67,6 +73,43 @@
 				4C459F1B258E70C500356166 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C459F24258E71EB00356166 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4C459F25258E720000356166 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4C459F26258E721400356166 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C459F16258E70C100356166 /* ContentView.swift */,
+				4C459F29258E72C400356166 /* MainTabView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C459F27258E721A00356166 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C459F28258E722000356166 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +183,7 @@
 			files = (
 				4C459F17258E70C100356166 /* ContentView.swift in Sources */,
 				4C459F15258E70C100356166 /* LineCloneApp.swift in Sources */,
+				4C459F2A258E72C400356166 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
