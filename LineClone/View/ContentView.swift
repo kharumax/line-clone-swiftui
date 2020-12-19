@@ -7,10 +7,28 @@
 
 import SwiftUI
 
+func getTitle(forIndex: Int) -> String {
+    if forIndex == 0 {
+        return "Home"
+    } else if forIndex == 1 {
+        return "Talk"
+    } else {
+        return "Timeline"
+    }
+}
+
+
 struct ContentView: View {
+    @State var selectedIndex = 0
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Group {
+            NavigationView {
+                MainTabView(selectedIndex: $selectedIndex)
+                    .navigationBarTitle(getTitle(forIndex: selectedIndex))
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+        }
     }
 }
 
