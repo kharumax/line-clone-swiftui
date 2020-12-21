@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @State var username = ""
-    @State var email = ""
-    @State var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     @State var isShowImagePicker = false
-    @State var selectedImage: UIImage?
     @State var image: Image?
+    
+    var isFormValid: Bool {
+        return !(viewModel.email.isEmpty || viewModel.password.count < 6 ||
+                    viewModel.username.isEmpty || viewModel.selectedImage == nil)
+    }
     
     @Binding var isShowLoginView: Bool
     
     func loadImage() {
-        guard let selectedImage = selectedImage else { return }
+        guard let selectedImage = viewModel.selectedImage else { return }
         image = Image(uiImage: selectedImage)
     }
         
@@ -44,7 +46,7 @@ struct SignUpView: View {
                         }
                     }
                 }).sheet(isPresented: $isShowImagePicker, onDismiss: loadImage, content: {
-                    ImagePicker(image: $selectedImage)
+                    ImagePicker(image: $viewModel.selectedImage)
                 })
                     
                 VStack(spacing: 10) {
@@ -54,7 +56,7 @@ struct SignUpView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20,height: 20)
-                            TextField("Username",text: $username)
+                            TextField("Username",text: $viewModel.username)
                         }.padding()
                     }
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
@@ -64,7 +66,7 @@ struct SignUpView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20,height: 20)
-                            TextField("Email",text: $email)
+                            TextField("Email",text: $viewModel.email)
                         }.padding()
                     }
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
@@ -74,7 +76,7 @@ struct SignUpView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20,height: 20)
-                            TextField("Password",text: $password)
+                            SecureField("Password",text: $viewModel.password)
                         }.padding()
                     }
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))

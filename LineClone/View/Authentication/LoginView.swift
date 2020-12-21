@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email = ""
-    @State var password = ""
-    
+    @EnvironmentObject var viewModel: AuthViewModel
     @State var isShowSignUpView = false
+     
+    var isFormValid: Bool {
+        return !(viewModel.email.isEmpty || viewModel.password.count < 6)
+    }
     
     var body: some View {
         NavigationView {
@@ -30,7 +32,7 @@ struct LoginView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20,height: 20)
-                            TextField("Email",text: $email)
+                            TextField("Email",text: $viewModel.email)
                         }.padding()
                     }
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
@@ -40,23 +42,25 @@ struct LoginView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20,height: 20)
-                            TextField("Password",text: $password)
+                            SecureField("Password",text: $viewModel.password)
                         }.padding()
                     }
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
                 }.padding(.horizontal,50).padding(.bottom,50)
                 VStack {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        viewModel.login()
+                    }, label: {
                         ZStack {
                             Text("ログイン").foregroundColor(.white)
                                 .padding()
                         }
-                        .background(Color.green)
+                        .background(isFormValid ? Color.green : Color.green.opacity(0.5))
                         .cornerRadius(20)
-                    })
+                    }).disabled(!isFormValid)
                 }
                 Spacer()
-                VStack {
+                VStack(spacing: 10) {
                     NavigationLink(
                         destination: SignUpView(isShowLoginView: $isShowSignUpView).navigationBarHidden(true),
                         isActive: $isShowSignUpView,
