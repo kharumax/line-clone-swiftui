@@ -12,13 +12,11 @@ struct SignUpView: View {
     
     @State var isShowImagePicker = false
     @State var image: Image?
-    
+    @Binding var isShowLoginView: Bool
     var isFormValid: Bool {
         return !(viewModel.email.isEmpty || viewModel.password.count < 6 ||
                     viewModel.username.isEmpty || viewModel.selectedImage == nil)
     }
-    
-    @Binding var isShowLoginView: Bool
     
     func loadImage() {
         guard let selectedImage = viewModel.selectedImage else { return }
@@ -82,7 +80,9 @@ struct SignUpView: View {
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 1))
                 }.padding(.horizontal,50).padding(.bottom,50)
                 VStack {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        viewModel.signUp()
+                    }, label: {
                         ZStack {
                             Text("会員登録").foregroundColor(.white)
                                 .padding()

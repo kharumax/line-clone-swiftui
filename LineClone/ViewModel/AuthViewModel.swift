@@ -43,19 +43,30 @@ class AuthViewModel: ObservableObject {
     
     func login() {
         self.isLoading = true
-        AuthService.login(email: email, password: password) { (errorMsg, error) in
+        AuthService.login(email: email, password: password) { (errorMsg, error, session) in
             if let error = error {
                 self.error = error
                 self.errorMessage = errorMsg
                 self.isLoading = false
                 return
             }
+            self.session = session
             self.fetchUser()
         }
     }
     
     func signUp() {
-        
+        self.isLoading = true
+        AuthService.signUp(email: email, password: password, username: username, profileImage: selectedImage!) { (user, session, error, errorMsg) in
+            if let error = error {
+                self.isLoading = false
+                self.error = error
+                self.errorMessage = errorMsg
+                return
+            }
+            self.session = session
+            self.user = user
+        }
     }
     
 }

@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import Firebase
 
-struct User {
-    let uid: String
+struct User: Identifiable {
+    // データ更新の際に特定することが出来るためにIdentifiableを継承する
+    let id: String
     let email: String
     let username: String
     let profileImageUrl: String
     let bio: String?
     
     init(dictionary: [String: Any]) {
-        self.uid = dictionary["uid"] as? String ?? ""
+        self.id = dictionary["uid"] as? String ?? ""
         self.email = dictionary["email"] as? String ?? ""
         self.username = dictionary["username"] as? String ?? ""
         self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
