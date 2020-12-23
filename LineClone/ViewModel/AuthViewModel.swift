@@ -48,6 +48,7 @@ class AuthViewModel: ObservableObject {
                 self.error = error
                 self.errorMessage = errorMsg
                 self.isLoading = false
+                print("DEBUG: Error is \(self.errorMessage?.debugDescription) at AuthViewModel")
                 return
             }
             self.session = session
@@ -62,6 +63,7 @@ class AuthViewModel: ObservableObject {
                 self.isLoading = false
                 self.error = error
                 self.errorMessage = errorMsg
+                print("DEBUG: Error is \(self.errorMessage?.debugDescription) at AuthViewModel")
                 return
             }
             self.session = session
