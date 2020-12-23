@@ -31,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C26B7FB259331FA009BF379 /* PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PLAN.md; sourceTree = "<group>"; };
 		4C459F11258E70C100356166 /* LineClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C459F14258E70C100356166 /* LineCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCloneApp.swift; sourceTree = "<group>"; };
 		4C459F16258E70C100356166 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 				4C459F18258E70C500356166 /* Assets.xcassets */,
 				4C459F1D258E70C500356166 /* Info.plist */,
 				4C459F1A258E70C500356166 /* Preview Content */,
+				4C26B7FB259331FA009BF379 /* PLAN.md */,
 			);
 			path = LineClone;
 			sourceTree = "<group>";

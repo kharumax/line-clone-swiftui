@@ -40,3 +40,6 @@ Carthage/Build
 # plist
 *.plist
 
+# .md
+/LineClone/PLAN.md
+
