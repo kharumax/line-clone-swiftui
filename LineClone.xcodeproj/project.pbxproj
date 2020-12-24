@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C253E15259488F500D1D4FE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C253E14259488F500D1D4FE /* ProfileViewModel.swift */; };
+		4C253E1825948D9900D1D4FE /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C253E1725948D9900D1D4FE /* ProfileService.swift */; };
 		4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B7FE259334A3009BF379 /* ProfileView.swift */; };
 		4C26B8052593354A009BF379 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B8042593354A009BF379 /* UserCellView.swift */; };
 		4C26B80A25946DD5009BF379 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B80925946DD5009BF379 /* SearchBar.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		4C253E14259488F500D1D4FE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		4C253E1725948D9900D1D4FE /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		4C26B7FB259331FA009BF379 /* PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PLAN.md; sourceTree = "<group>"; };
 		4C26B7FE259334A3009BF379 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4C26B8042593354A009BF379 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				4CC7BE34259084B70007E249 /* AuthService.swift */,
 				4C26B810259479FC009BF379 /* SearchService.swift */,
+				4C253E1725948D9900D1D4FE /* ProfileService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				4C459F2A258E72C400356166 /* MainTabView.swift in Sources */,
 				4C26B80A25946DD5009BF379 /* SearchBar.swift in Sources */,
 				4CC7BE2F259053380007E249 /* Constants.swift in Sources */,
+				4C253E1825948D9900D1D4FE /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

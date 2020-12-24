@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     @Binding var selectedIndex: Int
     
+    // MARK: -- ProfileViewはログイン中のUserで初期化する
     var body: some View {
         TabView(selection: $selectedIndex) {
             HomeView()
