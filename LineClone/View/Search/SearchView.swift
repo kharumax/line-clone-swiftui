@@ -9,21 +9,29 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @State var text: String = ""
+    @State var searchText = ""
+    @ObservedObject var viewModel = SearchViewModel()
+    
+    func searchUsers() {
+        viewModel.searchUsers(searchText: searchText)
+    }
+    
     var body: some View {
         ScrollView {
-            SearchBar(searchText: $text)
+            HStack {
+                SearchBar(searchText: $searchText, action: searchUsers)
+            }.padding(.horizontal,8)
             VStack(alignment: .leading) {
-                ForEach(1..<10) { _ in
-                    UserCellView()
+                ForEach(viewModel.users) { user in
+                    UserCellView(user: user)
                 }
             }
         }
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

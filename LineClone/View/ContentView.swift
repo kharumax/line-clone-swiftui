@@ -22,14 +22,13 @@ func getTitle(forIndex: Int) -> String {
 
 struct ContentView: View {
     //@EnvironmentObject var viewModel: AuthViewModel
-    @State var selectedIndex = 0
-    var isProfileView = false
-    @State var text: String = ""
+    @State var selectedIndex = 4
     
     var body: some View {
         Group {
             NavigationView {
                 MainTabView(selectedIndex: $selectedIndex)
+                    .padding(.top,8)
                     .navigationTitle(getTitle(forIndex: selectedIndex))
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarItems(leading: Button(action: {}, label: {
@@ -69,5 +68,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            //.environmentObject(AuthViewModel.authShared)
     }
 }
