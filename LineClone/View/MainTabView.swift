@@ -44,6 +44,14 @@ struct MainTabView: View {
                     Image(systemName: "clock.fill")
                     Text("タイムライン")
                 }.tag(3)
+            ProfileView()
+                .onTapGesture {
+                    selectedIndex = 4
+                }
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("プロフィール")
+                }.tag(4)
         }
     }
 }

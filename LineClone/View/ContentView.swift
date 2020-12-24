@@ -21,20 +21,47 @@ func getTitle(forIndex: Int) -> String {
 
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    //@EnvironmentObject var viewModel: AuthViewModel
     @State var selectedIndex = 0
+    var isProfileView = false
+    @State var text: String = ""
     
     var body: some View {
         Group {
-            if viewModel.session != nil {
-                NavigationView {
-                    MainTabView(selectedIndex: $selectedIndex)
-                        .navigationBarTitle(getTitle(forIndex: selectedIndex))
-                        .navigationBarTitleDisplayMode(.inline)
-                }
-            } else {
-                LoginView()
+            NavigationView {
+                MainTabView(selectedIndex: $selectedIndex)
+                    .navigationTitle(getTitle(forIndex: selectedIndex))
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarItems(leading: Button(action: {}, label: {
+                        HStack {
+                            Image("ironman")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 30,height: 30)
+                                .cornerRadius(15)
+                                .clipped()
+                        }
+                    }))
             }
+//            if viewModel.session != nil {
+//                NavigationView {
+//                    MainTabView(selectedIndex: $selectedIndex)
+//                        .navigationBarTitle(getTitle(forIndex: selectedIndex))
+//                        .navigationBarTitleDisplayMode(.inline)
+//            .navigationBarItems(leading: Button(action: {}, label: {
+//                HStack {
+//                    Image("ironman")
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 30,height: 30)
+//                        .cornerRadius(15)
+//                        .clipped()
+//                }
+//            }))
+//                }
+//            } else {
+//                LoginView()
+//            }
         }
     }
 }

@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @State var text: String = ""
     var body: some View {
-        Text("SearchView")
+        ScrollView {
+            SearchBar(searchText: $text)
+            VStack(alignment: .leading) {
+                ForEach(1..<10) { _ in
+                    UserCellView()
+                }
+            }
+        }
     }
 }
 

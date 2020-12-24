@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B7FE259334A3009BF379 /* ProfileView.swift */; };
+		4C26B8052593354A009BF379 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B8042593354A009BF379 /* UserCellView.swift */; };
+		4C26B80A25946DD5009BF379 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B80925946DD5009BF379 /* SearchBar.swift */; };
 		4C459F15258E70C100356166 /* LineCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F14258E70C100356166 /* LineCloneApp.swift */; };
 		4C459F17258E70C100356166 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F16258E70C100356166 /* ContentView.swift */; };
 		4C459F19258E70C500356166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C459F18258E70C500356166 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		4C26B7FB259331FA009BF379 /* PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PLAN.md; sourceTree = "<group>"; };
+		4C26B7FE259334A3009BF379 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4C26B8042593354A009BF379 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
+		4C26B80925946DD5009BF379 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		4C459F11258E70C100356166 /* LineClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C459F14258E70C100356166 /* LineCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCloneApp.swift; sourceTree = "<group>"; };
 		4C459F16258E70C100356166 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +74,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C26B7FD25933430009BF379 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4C26B7FE259334A3009BF379 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4C26B8022593352E009BF379 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				4C26B8042593354A009BF379 /* UserCellView.swift */,
+				4C26B80925946DD5009BF379 /* SearchBar.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		4C459F08258E70C100356166 = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +153,12 @@
 			isa = PBXGroup;
 			children = (
 				4CC7BE122590357E0007E249 /* Authentication */,
-				4C459F30258E763500356166 /* Timeline */,
-				4C459F2F258E762F00356166 /* Talk */,
-				4CF519A8258E7AA8007BACE4 /* Search */,
 				4C459F2E258E762900356166 /* Home */,
+				4CF519A8258E7AA8007BACE4 /* Search */,
+				4C459F2F258E762F00356166 /* Talk */,
+				4C459F30258E763500356166 /* Timeline */,
+				4C26B7FD25933430009BF379 /* Profile */,
+				4C26B8022593352E009BF379 /* Share */,
 				4C459F16258E70C100356166 /* ContentView.swift */,
 				4C459F29258E72C400356166 /* MainTabView.swift */,
 			);
@@ -293,12 +318,15 @@
 				4C459F36258E766500356166 /* TalkView.swift in Sources */,
 				4C459F15258E70C100356166 /* LineCloneApp.swift in Sources */,
 				4CC7BE38259089C90007E249 /* User.swift in Sources */,
+				4C26B8052593354A009BF379 /* UserCellView.swift in Sources */,
+				4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */,
 				4CC7BE35259084B70007E249 /* AuthService.swift in Sources */,
 				4CC7BE14259035960007E249 /* LoginView.swift in Sources */,
 				4CC7BE2025904FF60007E249 /* AuthViewModel.swift in Sources */,
 				4CC7BE1C259047120007E249 /* ImagePicker.swift in Sources */,
 				4CC7BE18259035B30007E249 /* SignUpView.swift in Sources */,
 				4C459F2A258E72C400356166 /* MainTabView.swift in Sources */,
+				4C26B80A25946DD5009BF379 /* SearchBar.swift in Sources */,
 				4CC7BE2F259053380007E249 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
