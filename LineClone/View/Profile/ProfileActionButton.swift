@@ -9,34 +9,46 @@ import SwiftUI
 
 struct ProfileActionButton: View {
     
-    var isCurrentUser = false
-    var isFriendUser = true
-    
-    func buttonText() -> String {
-        if isCurrentUser {
-            return "プロフィールを設定"
-        } else if isFriendUser {
-            return "トークを開始"
-        } else {
-            return "友達追加する"
-        }
-    }
+    @ObservedObject var viewModel: ProfileViewModel
+    // MARK: -- @Bindingだと真偽値がうまく動作しない。。。。
+//    @Binding var isCurrentUser: Bool
+//    @Binding var isFriendUser: Bool
+//    @Binding var isShowProfileEditView: Bool
     
     var body: some View {
         HStack {
-            Button(action: {}, label: {
-                Text(buttonText())
-                    .foregroundColor(.white)
-                    .font(.system(size: 20,weight: .semibold))
-            }).padding()
+            Group {
+                if viewModel.isCurrentUser {
+                    Button(action: {
+                        viewModel.isShowProfileEditView.toggle()
+                    }, label: {
+                        Text("プロフィールを設定")
+                            .foregroundColor(.white)
+                            .font(.system(size: 20,weight: .semibold))
+                    }).padding()
+                    .fullScreenCover(isPresented: $viewModel.isShowProfileEditView) {
+                        //ProfileUpdateView(isShowProfileEditView: $viewModel.isShowProfileEditView)
+                        ProfileUpdateView(viewModel: viewModel, isShowProfileEditView: $viewModel.isShowProfileEditView)
+                    }
+                } else {
+                    Button(action: {
+                        
+                    }, label: {
+                        Text(viewModel.isFriendUser ? "トークする" : "友達追加する")
+                            .foregroundColor(.white)
+                            .font(.system(size: 20,weight: .semibold))
+                    }).padding()
+                }
+            }
         }
         .background(Color.green)
         .cornerRadius(20)
+        
     }
 }
 
-struct ProfileActionButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileActionButton()
-    }
-}
+//struct ProfileActionButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileActionButton(isCurrentUser: .constant(false), isFriendUser: .constant(true),isShowProfileEditView: .constant(false))
+//    }
+//}

@@ -19,7 +19,7 @@ struct LineCloneApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                //.environmentObject(AuthViewModel.authShared)
+                .environmentObject(AuthViewModel.authShared)
         }
     }
 }

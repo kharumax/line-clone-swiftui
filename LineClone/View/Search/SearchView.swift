@@ -23,7 +23,12 @@ struct SearchView: View {
             }.padding(.horizontal,8)
             VStack(alignment: .leading) {
                 ForEach(viewModel.users) { user in
-                    UserCellView(user: user)
+                    NavigationLink(
+                        destination: ProfileView(user: user),
+                        label: {
+                            UserCellView(user: user)
+                        }
+                    )
                 }
             }
         }

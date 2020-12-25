@@ -23,14 +23,17 @@ class AuthViewModel: ObservableObject {
     static let authShared = AuthViewModel()
     
     init() {
+        print("DEBUG: AuthViewModel is init!")
+        self.isLoading = true
         session = Auth.auth().currentUser
         fetchUser()
     }
     
     func fetchUser() {
-        guard let uid = session?.uid else { return }
         self.isLoading = true
+        guard let uid = session?.uid else { return }
         AuthService.fetchUser(uid: uid) { (user, error) in
+            print("DEBUG: AuthViewModel fetchUser is called!")
             self.isLoading = false
             if let error = error {
                 self.error = error

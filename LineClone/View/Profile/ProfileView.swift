@@ -6,28 +6,43 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct ProfileView: View {
+    private let user: User
+    @ObservedObject var viewModel: ProfileViewModel
+    
+    init(user: User) {
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+    }
+    
     var body: some View {
         VStack {
-            Image("ironman")
+            KFImage(URL(string: viewModel.user.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 250,height: 250)
                 .cornerRadius(125)
                 .clipped()
                 .padding(.bottom,24)
-            Text("Ironman").font(.system(size: 20,weight: .semibold))
+            Text(viewModel.user.username).font(.system(size: 20,weight: .semibold))
                 .padding(.bottom,16)
-            Text("I am ironman . Also I am Tony Stark, It's means that I am CEO of Stark Industory").font(.system(size: 16)).lineLimit(5).padding(.horizontal,40)
+            Text(viewModel.user.bio ?? "").font(.system(size: 16)).lineLimit(5)
+                .padding(.horizontal,40)
                 .padding(.bottom,24)
-            ProfileActionButton()
+            ProfileActionButton(viewModel: viewModel)
+            
         }
+    }
+    
+    func profileButtonAction() {
+        print("")
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileView()
+//    }
+//}
