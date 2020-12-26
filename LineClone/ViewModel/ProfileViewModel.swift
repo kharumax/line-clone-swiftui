@@ -12,9 +12,12 @@ class ProfileViewModel: ObservableObject {
     @Published var user: User
     @Published var isCurrentUser: Bool
     @Published var isFriendUser = false
-    @Published var isEditProfile = false
+    //@Published var isEditProfile = false
     @Published var isShowProfileEditView = false
     @Published var error: Error?
+    @Published var username: String
+    @Published var bio: String
+    @Published var selectedImage: UIImage?
     private let currentUid = AuthViewModel.authShared.session!.uid // user in LoggedIn
     
     init(user: User) {
@@ -22,6 +25,8 @@ class ProfileViewModel: ObservableObject {
         print("DEBUG: self.currentUid == user.id is \(self.currentUid == user.id)")
         self.user = user
         self.isCurrentUser = self.currentUid == user.id
+        self.username = user.username
+        self.bio = user.bio ?? ""
         self.IsFriendUser()
     }
     
@@ -45,6 +50,18 @@ class ProfileViewModel: ObservableObject {
             }
             self.isFriendUser = true
         }
+    }
+    
+    func updateProfile() {
+        
+    }
+    
+    func follow() {
+        
+    }
+    
+    func unfollow() {
+        
     }
     
     func startChat() {

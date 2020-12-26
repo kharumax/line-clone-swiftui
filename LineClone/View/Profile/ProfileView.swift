@@ -32,7 +32,6 @@ struct ProfileView: View {
                 .padding(.horizontal,40)
                 .padding(.bottom,24)
             ProfileActionButton(viewModel: viewModel)
-            
         }
     }
     

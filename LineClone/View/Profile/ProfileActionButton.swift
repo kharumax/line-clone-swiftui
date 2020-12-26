@@ -27,8 +27,7 @@ struct ProfileActionButton: View {
                             .font(.system(size: 20,weight: .semibold))
                     }).padding()
                     .fullScreenCover(isPresented: $viewModel.isShowProfileEditView) {
-                        //ProfileUpdateView(isShowProfileEditView: $viewModel.isShowProfileEditView)
-                        ProfileUpdateView(viewModel: viewModel, isShowProfileEditView: $viewModel.isShowProfileEditView)
+                        ProfileUpdateView(viewModel: viewModel)
                     }
                 } else {
                     Button(action: {
