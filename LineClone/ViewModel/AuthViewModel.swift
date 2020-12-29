@@ -49,8 +49,8 @@ class AuthViewModel: ObservableObject {
         AuthService.login(email: email, password: password) { (errorMsg, error, session) in
             if let error = error {
                 self.error = error
-                self.errorMessage = errorMsg
                 self.isLoading = false
+                self.errorMessage = errorMsg
                 print("DEBUG: Error is \(self.errorMessage?.debugDescription) at AuthViewModel")
                 return
             }
@@ -62,8 +62,8 @@ class AuthViewModel: ObservableObject {
     func signUp() {
         self.isLoading = true
         AuthService.signUp(email: email, password: password, username: username, profileImage: selectedImage!) { (user, session, error, errorMsg) in
+            self.isLoading = false
             if let error = error {
-                self.isLoading = false
                 self.error = error
                 self.errorMessage = errorMsg
                 print("DEBUG: Error is \(self.errorMessage?.debugDescription) at AuthViewModel")

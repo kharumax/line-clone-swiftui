@@ -23,6 +23,7 @@
 		4C459F32258E765700356166 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F31258E765700356166 /* HomeView.swift */; };
 		4C459F36258E766500356166 /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F35258E766500356166 /* TalkView.swift */; };
 		4C459F39258E766F00356166 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F38258E766F00356166 /* TimelineView.swift */; };
+		4CC2086D259B11D800B36F26 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2086C259B11D800B36F26 /* Room.swift */; };
 		4CC7BE14259035960007E249 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7BE13259035960007E249 /* LoginView.swift */; };
 		4CC7BE18259035B30007E249 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7BE17259035B30007E249 /* SignUpView.swift */; };
 		4CC7BE1C259047120007E249 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7BE1B259047120007E249 /* ImagePicker.swift */; };
@@ -59,6 +60,7 @@
 		4C459F31258E765700356166 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4C459F35258E766500356166 /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
 		4C459F38258E766F00356166 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		4CC2086C259B11D800B36F26 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		4CC7BE13259035960007E249 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4CC7BE17259035B30007E249 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4CC7BE1B259047120007E249 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				4CC7BE37259089C90007E249 /* User.swift */,
+				4CC2086C259B11D800B36F26 /* Room.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				4C459F17258E70C100356166 /* ContentView.swift in Sources */,
 				4C459F39258E766F00356166 /* TimelineView.swift in Sources */,
+				4CC2086D259B11D800B36F26 /* Room.swift in Sources */,
 				4C459F32258E765700356166 /* HomeView.swift in Sources */,
 				4CF519AA258E7AC6007BACE4 /* SearchView.swift in Sources */,
 				4C459F36258E766500356166 /* TalkView.swift in Sources */,

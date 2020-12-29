@@ -11,7 +11,7 @@ import Firebase
 struct ProfileService {
     
     static func IsFriendUser(currentUid: String,uid: String,completion: @escaping(Bool?,Error?) -> Void) {
-        let friendRef = COLLECTION_USERS.document(currentUid).collection("friend")
+        let friendRef = COLLECTION_USERS_FRIENDS(uid: currentUid)
         friendRef.document(uid).getDocument { (snapshot, error) in
             if let error = error {
                 completion(nil,error)
@@ -56,8 +56,8 @@ struct ProfileService {
     }
     
     static func addFriend(currentUid: String,uid: String,completion: @escaping(Error?) -> Void) {
-        let friendRef = COLLECTION_USERS.document(currentUid).collection("friend")
-        let friendPartnerRef = COLLECTION_USERS.document(uid).collection("friend")
+        let friendRef = COLLECTION_USERS_FRIENDS(uid: currentUid)
+        let friendPartnerRef = COLLECTION_USERS_FRIENDS(uid: uid)
         friendRef.document(uid).setData([:]) { error in
             if let error = error {
                 completion(error)
@@ -73,7 +73,29 @@ struct ProfileService {
         }
     }
     
-    
+    static func createChatRoom(sender: User,receiver: User,completion: @escaping(Error?) -> Void) {
+        let roomsRef = COLLECTION_ROOMS.document()
+        let roomData = initRoomData(sender: sender, receiver: receiver, id: roomsRef.documentID)
+        roomsRef.setData(roomData) { (error) in
+            if let error = error {
+                completion(error)
+                return
+            }
+            COLLECTION_USERS_ROOMS(uid: sender.id).document(roomsRef.documentID).setData(["partnerId": receiver.id]) { (error) in
+                if let error = error {
+                    completion(error)
+                    return
+                }
+                COLLECTION_USERS_ROOMS(uid: receiver.id).document(roomsRef.documentID).setData(["partnerId": sender.id]) { (error) in
+                    if let error = error {
+                        completion(error)
+                    }
+                    completion(nil)
+                }
+            }
+        }
+        
+    }
 }
 
 

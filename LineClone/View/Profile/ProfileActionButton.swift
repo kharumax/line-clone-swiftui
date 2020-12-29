@@ -31,7 +31,7 @@ struct ProfileActionButton: View {
                     }
                 } else {
                     Button(action: {
-                        
+                        viewModel.isFriendUser ? viewModel.startChat() : viewModel.addFriend()
                     }, label: {
                         Text(viewModel.isFriendUser ? "トークする" : "友達追加する")
                             .foregroundColor(.white)

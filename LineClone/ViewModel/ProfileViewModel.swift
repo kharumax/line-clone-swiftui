@@ -44,13 +44,28 @@ class ProfileViewModel: ObservableObject {
     }
     
     func addFriend() {
-        guard let currentUid = self.currentUid else { return }
-        ProfileService.addFriend(currentUid: currentUid, uid: user.id) { error in
-            if let error = error {
-                self.error = error
-                return
+        if !isFriendUser {
+            guard let currentUid = self.currentUid else { return }
+            ProfileService.addFriend(currentUid: currentUid, uid: user.id) { error in
+                if let error = error {
+                    self.error = error
+                    return
+                }
+                self.isFriendUser = true
+                AuthService.fetchUser(uid: currentUid) { (sender, error) in
+                    if let error = error {
+                        self.error = error
+                        return
+                    }
+                    guard let sender = sender else { return }
+                    ProfileService.createChatRoom(sender: sender, receiver: self.user) { (error) in
+                        if let error = error {
+                            self.error = error
+                            return
+                        }
+                    }
+                }
             }
-            self.isFriendUser = true
         }
     }
     
@@ -85,8 +100,8 @@ class ProfileViewModel: ObservableObject {
     }
     
     func startChat() {
-        // 既に部屋が存在しているかどうかを判断する
-        // 存在している場合はそこに遷移する。存在しない場合は部屋を作成して、遷移する
+        // トークルームの情報を取得して、Viewを移動する
+        print("DEBUG: StartChat")
     }
     
 }
