@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var test = ""
+    
     var body: some View {
-        
-            Text("HomeView")
-            
-        
+        VStack {
+            HStack {
+                Image("ironman")
+                    .resizable()
+                    .frame(width: 50,height: 50)
+                    .cornerRadius(25)
+                Text("ironman")
+            }
+        }
     }
 }
 
