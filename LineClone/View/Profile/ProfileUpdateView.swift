@@ -44,13 +44,16 @@ struct ProfileUpdateView: View {
                 ImagePicker(image: $viewModel.selectedImage)
             })
             VStack(spacing: 10) {
-                ZStack {
-                    TextField(viewModel.username, text: $viewModel.username).font(.system(size: 20,weight: .semibold)).padding()
-                }.overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1).fill(Color.gray)).padding(.bottom,40)
-                ZStack {
-                    TextField(viewModel.bio, text: $viewModel.bio).font(.system(size: 16)).lineLimit(5).padding()
-                }.overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1).fill(Color.gray)).padding(.horizontal,40)
-                .padding(.bottom,24)
+                VStack(spacing: 10) {
+                    ZStack {
+                        TextField(viewModel.username, text: $viewModel.username).font(.system(size: 20,weight: .semibold)).padding()
+                    }.overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1).fill(Color.gray)).padding(.horizontal,40)
+                    .padding(.bottom,24)
+                    ZStack {
+                        TextField(viewModel.bio, text: $viewModel.bio).font(.system(size: 16)).lineLimit(5).padding()
+                    }.overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1).fill(Color.gray)).padding(.horizontal,40)
+                    .padding(.bottom,24)
+                }
                 HStack(spacing: 10) {
                     Button(action: { viewModel.isShowProfileEditView.toggle() }, label: {
                         ZStack {
@@ -63,7 +66,7 @@ struct ProfileUpdateView: View {
                         .overlay(RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 1).fill(Color.green))
                     })
                     Button(action: {
-                        
+                        viewModel.updateProfile()
                     }, label: {
                         ZStack {
                             Text("更新する").foregroundColor(.white)

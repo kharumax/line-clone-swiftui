@@ -74,4 +74,18 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func logout() {
+        AuthService.logout { error in
+            if let error = error {
+                self.error = error
+                return
+            }
+            self.email = ""
+            self.username = ""
+            self.selectedImage = nil
+            self.password = ""
+            self.session = nil
+        }
+    }
+    
 }

@@ -18,7 +18,7 @@ class ProfileViewModel: ObservableObject {
     @Published var username: String
     @Published var bio: String
     @Published var selectedImage: UIImage?
-    private let currentUid = AuthViewModel.authShared.session!.uid // user in LoggedIn
+    private let currentUid = AuthViewModel.authShared.session?.uid // user in LoggedIn
     
     init(user: User) {
         print("DEBUG: ProfileViewModel is init")
@@ -31,6 +31,7 @@ class ProfileViewModel: ObservableObject {
     }
     
     func IsFriendUser() {
+        guard let currentUid = self.currentUid else { return }
         ProfileService.IsFriendUser(currentUid: currentUid, uid: user.id) { (isFriendUser, error) in
             if let error = error {
                 print("DEBUG: IsFriendUser is error")
@@ -43,6 +44,7 @@ class ProfileViewModel: ObservableObject {
     }
     
     func addFriend() {
+        guard let currentUid = self.currentUid else { return }
         ProfileService.addFriend(currentUid: currentUid, uid: user.id) { error in
             if let error = error {
                 self.error = error
@@ -53,15 +55,33 @@ class ProfileViewModel: ObservableObject {
     }
     
     func updateProfile() {
-        
-    }
-    
-    func follow() {
-        
-    }
-    
-    func unfollow() {
-        
+        guard let currentUid = self.currentUid else { return }
+        if selectedImage != nil {
+            ProfileService.updateProfileImage(currentUid: currentUid, image: selectedImage) { (url, error) in
+                if let error = error {
+                    self.error = error
+                    return
+                }
+                guard let profileImageUrl = url else { return }
+                ProfileService.updateProfile(user: self.user, username: self.username, bio: self.bio, imageUrl: profileImageUrl) { (user, error) in
+                    if let error = error {
+                        self.error = error
+                        return
+                    }
+                    self.user = user!
+                    self.isShowProfileEditView.toggle()
+                }
+            }
+        } else {
+            ProfileService.updateProfile(user: self.user, username: self.username, bio: self.bio, imageUrl: self.user.profileImageUrl) { (user, error) in
+                if let error = error {
+                    self.error = error
+                    return
+                }
+                self.user = user!
+                self.isShowProfileEditView.toggle()
+            }
+        }
     }
     
     func startChat() {

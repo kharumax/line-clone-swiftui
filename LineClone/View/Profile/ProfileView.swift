@@ -11,10 +11,12 @@ import KingfisherSwiftUI
 struct ProfileView: View {
     private let user: User
     @ObservedObject var viewModel: ProfileViewModel
+    @State private var isShowLogoutAlert = false
     
     init(user: User) {
         self.user = user
         self.viewModel = ProfileViewModel(user: user)
+        print("DEBUG: isCurrentUser is \(viewModel.isCurrentUser)")
     }
     
     var body: some View {
@@ -32,6 +34,31 @@ struct ProfileView: View {
                 .padding(.horizontal,40)
                 .padding(.bottom,24)
             ProfileActionButton(viewModel: viewModel)
+            ZStack {
+                if viewModel.isCurrentUser {
+                    HStack {
+                        Button(action: {
+                            self.isShowLogoutAlert.toggle()
+                        }, label: {
+                            Text("ログアウト")
+                                .foregroundColor(.green)
+                                .font(.system(size: 20,weight: .semibold))
+                        }).padding()
+                        .alert(isPresented: $isShowLogoutAlert) {
+                            Alert(title: Text("ログアウト"),
+                                  message: Text("ログアウトしますか？"),
+                                  primaryButton: .default(Text("いいえ")) {
+                                    self.isShowLogoutAlert.toggle()
+                                  },
+                                  secondaryButton: .default(Text("はい")) {
+                                    self.isShowLogoutAlert.toggle()
+                                    AuthViewModel.authShared.logout()
+                                  }
+                            )
+                        }
+                    }.background(Color.white).cornerRadius(20)
+                }
+            }
         }
     }
     

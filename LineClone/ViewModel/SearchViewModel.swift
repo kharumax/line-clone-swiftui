@@ -28,7 +28,8 @@ class SearchViewModel: ObservableObject {
                 self.error = error
                 self.errorMessage = error.localizedDescription
             }
-            self.users = users!
+            guard let users = users else { return }
+            self.users = users
         }
     }
     

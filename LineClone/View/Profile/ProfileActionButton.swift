@@ -22,7 +22,7 @@ struct ProfileActionButton: View {
                     Button(action: {
                         viewModel.isShowProfileEditView.toggle()
                     }, label: {
-                        Text("プロフィールを設定")
+                        Text("プロフィールを編集")
                             .foregroundColor(.white)
                             .font(.system(size: 20,weight: .semibold))
                     }).padding()

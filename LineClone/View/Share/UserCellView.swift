@@ -21,7 +21,9 @@ struct UserCellView: View {
                 .clipped()
             VStack(alignment: .leading,spacing: 10) {
                 Text(user.username).font(.system(size: 18,weight: .semibold))
+                    .foregroundColor(.black)
                 Text(user.bio ?? "").font(.system(size: 14))
+                    .foregroundColor(.black)
             }
             Spacer()
         }.padding(.horizontal,16)

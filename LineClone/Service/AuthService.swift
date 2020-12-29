@@ -100,6 +100,14 @@ struct AuthService {
         
     }
     
+    static func logout(completion: @escaping(Error?) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(nil)
+        } catch {
+            completion(error)
+        }
+    }
     
     
 }
