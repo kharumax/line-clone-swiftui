@@ -37,6 +37,10 @@
 		4CC7BE35259084B70007E249 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7BE34259084B70007E249 /* AuthService.swift */; };
 		4CC7BE38259089C90007E249 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7BE37259089C90007E249 /* User.swift */; };
 		4CD111492594838D00DF3A38 /* ProfileActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD111482594838D00DF3A38 /* ProfileActionButton.swift */; };
+		4CD31D00259DB60000CA3AC6 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31CFF259DB60000CA3AC6 /* FriendCell.swift */; };
+		4CD31D03259DC15700CA3AC6 /* FriendModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D02259DC15700CA3AC6 /* FriendModalView.swift */; };
+		4CD31D06259DC9A700CA3AC6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D05259DC9A700CA3AC6 /* HomeViewModel.swift */; };
+		4CD31D0A259DD27100CA3AC6 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D09259DD27100CA3AC6 /* HomeService.swift */; };
 		4CF519AA258E7AC6007BACE4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF519A9258E7AC6007BACE4 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,10 @@
 		4CC7BE34259084B70007E249 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4CC7BE37259089C90007E249 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4CD111482594838D00DF3A38 /* ProfileActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButton.swift; sourceTree = "<group>"; };
+		4CD31CFF259DB60000CA3AC6 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		4CD31D02259DC15700CA3AC6 /* FriendModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModalView.swift; sourceTree = "<group>"; };
+		4CD31D05259DC9A700CA3AC6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4CD31D09259DD27100CA3AC6 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		4CF519A9258E7AC6007BACE4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +163,7 @@
 				4CC7BE34259084B70007E249 /* AuthService.swift */,
 				4C26B810259479FC009BF379 /* SearchService.swift */,
 				4C253E1725948D9900D1D4FE /* ProfileService.swift */,
+				4CD31D09259DD27100CA3AC6 /* HomeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 				4CC7BE1F25904FF60007E249 /* AuthViewModel.swift */,
 				4C26B80D25947912009BF379 /* SearchViewModel.swift */,
 				4C253E14259488F500D1D4FE /* ProfileViewModel.swift */,
+				4CD31D05259DC9A700CA3AC6 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				4C459F31258E765700356166 /* HomeView.swift */,
+				4CD31CFF259DB60000CA3AC6 /* FriendCell.swift */,
+				4CD31D02259DC15700CA3AC6 /* FriendModalView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -336,14 +348,17 @@
 				4C459F39258E766F00356166 /* TimelineView.swift in Sources */,
 				4CC2086D259B11D800B36F26 /* Room.swift in Sources */,
 				4C459F32258E765700356166 /* HomeView.swift in Sources */,
+				4CD31D00259DB60000CA3AC6 /* FriendCell.swift in Sources */,
 				4CF519AA258E7AC6007BACE4 /* SearchView.swift in Sources */,
 				4C459F36258E766500356166 /* TalkView.swift in Sources */,
 				4C459F15258E70C100356166 /* LineCloneApp.swift in Sources */,
 				4C253E15259488F500D1D4FE /* ProfileViewModel.swift in Sources */,
 				4C26B80E25947912009BF379 /* SearchViewModel.swift in Sources */,
+				4CD31D06259DC9A700CA3AC6 /* HomeViewModel.swift in Sources */,
 				4C3947B825962B9E00809398 /* ProfileUpdateView.swift in Sources */,
 				4CC7BE38259089C90007E249 /* User.swift in Sources */,
 				4C26B8052593354A009BF379 /* UserCellView.swift in Sources */,
+				4CD31D0A259DD27100CA3AC6 /* HomeService.swift in Sources */,
 				4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */,
 				4CC7BE35259084B70007E249 /* AuthService.swift in Sources */,
 				4CD111492594838D00DF3A38 /* ProfileActionButton.swift in Sources */,
@@ -354,6 +369,7 @@
 				4CC7BE18259035B30007E249 /* SignUpView.swift in Sources */,
 				4C459F2A258E72C400356166 /* MainTabView.swift in Sources */,
 				4C26B80A25946DD5009BF379 /* SearchBar.swift in Sources */,
+				4CD31D03259DC15700CA3AC6 /* FriendModalView.swift in Sources */,
 				4CC7BE2F259053380007E249 /* Constants.swift in Sources */,
 				4C253E1825948D9900D1D4FE /* ProfileService.swift in Sources */,
 			);
