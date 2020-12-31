@@ -8,28 +8,15 @@
 import SwiftUI
 
 struct TimelineView: View {
+    
     var body: some View {
-        VStack {
-            HStack {
-                Image("ironman")
-                    .resizable()
-                    .frame(width: 50,height: 50)
-                    .cornerRadius(25)
-                Text("ironman").font(.system(size: 24,weight: .semibold))
-                Spacer()
-            }
-            Image("ironman")
-                .resizable()
-                .scaledToFill()
-                .frame(height: 400)
-            HStack {
-                Text("I am ironman ... ")
-                    .frame(maxWidth: .infinity,alignment: .leading)
-                    .padding()
-            }
-            HStack {
-                
-            }
+        ScrollView {
+            VStack {
+                ForEach(0..<10) { _ in
+                    TimeLineCellView().padding(.vertical,8)
+                    Divider().border(Color.gray, width: 2)
+                }
+            }.padding(.vertical,8)
         }
     }
 }

@@ -41,6 +41,9 @@
 		4CD31D03259DC15700CA3AC6 /* FriendModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D02259DC15700CA3AC6 /* FriendModalView.swift */; };
 		4CD31D06259DC9A700CA3AC6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D05259DC9A700CA3AC6 /* HomeViewModel.swift */; };
 		4CD31D0A259DD27100CA3AC6 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D09259DD27100CA3AC6 /* HomeService.swift */; };
+		4CD31D0D259E038D00CA3AC6 /* TimeLineCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D0C259E038D00CA3AC6 /* TimeLineCellView.swift */; };
+		4CD31D11259E355900CA3AC6 /* CommentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D10259E355900CA3AC6 /* CommentCellView.swift */; };
+		4CD31D15259E366A00CA3AC6 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD31D14259E366A00CA3AC6 /* CommentView.swift */; };
 		4CF519AA258E7AC6007BACE4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF519A9258E7AC6007BACE4 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,9 @@
 		4CD31D02259DC15700CA3AC6 /* FriendModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModalView.swift; sourceTree = "<group>"; };
 		4CD31D05259DC9A700CA3AC6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4CD31D09259DD27100CA3AC6 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		4CD31D0C259E038D00CA3AC6 /* TimeLineCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineCellView.swift; sourceTree = "<group>"; };
+		4CD31D10259E355900CA3AC6 /* CommentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellView.swift; sourceTree = "<group>"; };
+		4CD31D14259E366A00CA3AC6 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		4CF519A9258E7AC6007BACE4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,7 +240,9 @@
 		4C459F30258E763500356166 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				4CD31D0F259E354800CA3AC6 /* Comment */,
 				4C459F38258E766F00356166 /* TimelineView.swift */,
+				4CD31D0C259E038D00CA3AC6 /* TimeLineCellView.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -254,6 +262,15 @@
 				4CC7BE1B259047120007E249 /* ImagePicker.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4CD31D0F259E354800CA3AC6 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				4CD31D10259E355900CA3AC6 /* CommentCellView.swift */,
+				4CD31D14259E366A00CA3AC6 /* CommentView.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		4CF519A8258E7AA8007BACE4 /* Search */ = {
@@ -351,12 +368,14 @@
 				4CD31D00259DB60000CA3AC6 /* FriendCell.swift in Sources */,
 				4CF519AA258E7AC6007BACE4 /* SearchView.swift in Sources */,
 				4C459F36258E766500356166 /* TalkView.swift in Sources */,
+				4CD31D15259E366A00CA3AC6 /* CommentView.swift in Sources */,
 				4C459F15258E70C100356166 /* LineCloneApp.swift in Sources */,
 				4C253E15259488F500D1D4FE /* ProfileViewModel.swift in Sources */,
 				4C26B80E25947912009BF379 /* SearchViewModel.swift in Sources */,
 				4CD31D06259DC9A700CA3AC6 /* HomeViewModel.swift in Sources */,
 				4C3947B825962B9E00809398 /* ProfileUpdateView.swift in Sources */,
 				4CC7BE38259089C90007E249 /* User.swift in Sources */,
+				4CD31D0D259E038D00CA3AC6 /* TimeLineCellView.swift in Sources */,
 				4C26B8052593354A009BF379 /* UserCellView.swift in Sources */,
 				4CD31D0A259DD27100CA3AC6 /* HomeService.swift in Sources */,
 				4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */,
@@ -369,6 +388,7 @@
 				4CC7BE18259035B30007E249 /* SignUpView.swift in Sources */,
 				4C459F2A258E72C400356166 /* MainTabView.swift in Sources */,
 				4C26B80A25946DD5009BF379 /* SearchBar.swift in Sources */,
+				4CD31D11259E355900CA3AC6 /* CommentCellView.swift in Sources */,
 				4CD31D03259DC15700CA3AC6 /* FriendModalView.swift in Sources */,
 				4CC7BE2F259053380007E249 /* Constants.swift in Sources */,
 				4C253E1825948D9900D1D4FE /* ProfileService.swift in Sources */,
