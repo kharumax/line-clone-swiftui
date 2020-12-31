@@ -9,7 +9,28 @@ import SwiftUI
 
 struct TimelineView: View {
     var body: some View {
-        Text("TimelineView")
+        VStack {
+            HStack {
+                Image("ironman")
+                    .resizable()
+                    .frame(width: 50,height: 50)
+                    .cornerRadius(25)
+                Text("ironman").font(.system(size: 24,weight: .semibold))
+                Spacer()
+            }
+            Image("ironman")
+                .resizable()
+                .scaledToFill()
+                .frame(height: 400)
+            HStack {
+                Text("I am ironman ... ")
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                    .padding()
+            }
+            HStack {
+                
+            }
+        }
     }
 }
 

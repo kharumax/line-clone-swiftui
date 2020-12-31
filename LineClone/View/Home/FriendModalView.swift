@@ -11,6 +11,7 @@ import KingfisherSwiftUI
 struct FriendModalView: View {
     
     let user: User
+    @State var isShowProfileView = false
     
     var body: some View {
         VStack {
@@ -26,7 +27,12 @@ struct FriendModalView: View {
                         .padding(.horizontal).padding(.vertical,8)
                         .font(.system(size: 20,weight: .semibold))
                 }).background(Color.green).cornerRadius(10)
-                Button(action: {}, label: {
+                NavigationLink(
+                    destination: ProfileView(user: user),
+                    isActive: $isShowProfileView) {
+                        EmptyView()
+                    }
+                Button(action: { self.isShowProfileView.toggle() }, label: {
                     Text("プロフィール").foregroundColor(.white)
                         .padding(.horizontal).padding(.vertical,8)
                         .font(.system(size: 20,weight: .semibold))
@@ -43,3 +49,21 @@ struct FriendModalView: View {
 //        FriendModalView()
 //    }
 //}
+
+/*
+ 
+ KFImage(URL(string: user.profileImageUrl))
+     .resizable()
+     .frame(width: 100,height: 100)
+     .cornerRadius(50)
+ Text(user.username).font(.system(size: 25,weight: .semibold)).padding(.bottom,8)
+ Text(user.bio ?? "").foregroundColor(.gray).font(.system(size: 20)).padding(.bottom,16)
+ 
+ Image("ironman")
+     .resizable()
+     .frame(width: 100,height: 100)
+     .cornerRadius(50)
+ Text("ironman").font(.system(size: 25,weight: .semibold)).padding(.bottom,8)
+ Text("I am ironman .").foregroundColor(.gray).font(.system(size: 20)).padding(.bottom,16)
+ 
+ */
