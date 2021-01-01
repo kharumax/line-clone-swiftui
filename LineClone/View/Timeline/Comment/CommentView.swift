@@ -10,6 +10,7 @@ import SwiftUI
 struct CommentView: View {
     
     @State var text = ""
+    
     var body: some View {
         VStack {
             ScrollView {

@@ -36,12 +36,12 @@ struct TimelineCellView: View {
                         .foregroundColor(.black)
                 })
                 Text("0")
-                Button(action: {}, label: {
+                Button(action: { self.isShowCommentView.toggle() }, label: {
                     Image(systemName: "bubble.right")
                         .frame(width: 32,height: 32).foregroundColor(.black)
                 })
                 .sheet(isPresented: $isShowCommentView, content: {
-                    Text("Hello")
+                    CommentView()
                 })
                 Text("0")
                 Button(action: {}, label: {
