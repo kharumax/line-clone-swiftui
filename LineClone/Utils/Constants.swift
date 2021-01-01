@@ -15,7 +15,6 @@ let STORAGE_USERS = Storage.storage().reference().child("profile_images")
 let STORAGE_TIMELINE = Storage.storage().reference().child("timeline_images")
 
 
-
 // Firestore Collection
 let COLLECTION_USERS = Firestore.firestore().collection("users")
 func COLLECTION_USERS_FRIENDS(uid: String) -> CollectionReference {
@@ -24,6 +23,17 @@ func COLLECTION_USERS_FRIENDS(uid: String) -> CollectionReference {
 let COLLECTION_ROOMS = Firestore.firestore().collection("rooms")
 func COLLECTION_USERS_ROOMS(uid: String) -> CollectionReference {
     return COLLECTION_USERS.document(uid).collection("rooms")
+}
+func COLLECTION_USER_LIKES(uid: String) -> CollectionReference {
+    return COLLECTION_USERS.document(uid).collection("likes")
+}
+
+let COLLECTION_TIMELINES = Firestore.firestore().collection("timelines")
+func COLLECTION_TIMELINE_LIKESS(timelineId: String) -> CollectionReference {
+    return COLLECTION_TIMELINES.document(timelineId).collection("likes")
+}
+func COLLECTION_TIMELINE_COMMENTS(timelineId: String) -> CollectionReference {
+    return COLLECTION_TIMELINES.document(timelineId).collection("comments")
 }
 
 /*

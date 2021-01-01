@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimeLineCellView: View {
+struct TimelineCellView: View {
     
     @State var isShowCommentView = false
     
@@ -62,6 +62,6 @@ struct TimeLineCellView: View {
 
 struct TimeLineCellView_Previews: PreviewProvider {
     static var previews: some View {
-        TimeLineCellView()
+        TimelineCellView()
     }
 }
