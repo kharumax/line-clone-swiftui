@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C01D49B25A40C7900BDDD5A /* TimelineCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01D49A25A40C7900BDDD5A /* TimelineCellViewModel.swift */; };
+		4C01D49E25A40CF900BDDD5A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01D49D25A40CF900BDDD5A /* Comment.swift */; };
 		4C253E15259488F500D1D4FE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C253E14259488F500D1D4FE /* ProfileViewModel.swift */; };
 		4C253E1825948D9900D1D4FE /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C253E1725948D9900D1D4FE /* ProfileService.swift */; };
 		4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B7FE259334A3009BF379 /* ProfileView.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C01D49A25A40C7900BDDD5A /* TimelineCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCellViewModel.swift; sourceTree = "<group>"; };
+		4C01D49D25A40CF900BDDD5A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		4C253E14259488F500D1D4FE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		4C253E1725948D9900D1D4FE /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		4C26B7FB259331FA009BF379 /* PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PLAN.md; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				4C253E14259488F500D1D4FE /* ProfileViewModel.swift */,
 				4CD31D05259DC9A700CA3AC6 /* HomeViewModel.swift */,
 				4CD31D17259E3D6A00CA3AC6 /* TimelineViewModel.swift */,
+				4C01D49A25A40C7900BDDD5A /* TimelineCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				4CC7BE37259089C90007E249 /* User.swift */,
 				4CC2086C259B11D800B36F26 /* Room.swift */,
 				4CD31D1B259E3D9700CA3AC6 /* Timeline.swift */,
+				4C01D49D25A40CF900BDDD5A /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,11 +399,13 @@
 				4CD31D0A259DD27100CA3AC6 /* HomeService.swift in Sources */,
 				4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */,
 				4CC7BE35259084B70007E249 /* AuthService.swift in Sources */,
+				4C01D49E25A40CF900BDDD5A /* Comment.swift in Sources */,
 				4CD111492594838D00DF3A38 /* ProfileActionButton.swift in Sources */,
 				4CC7BE14259035960007E249 /* LoginView.swift in Sources */,
 				4CD31D1C259E3D9700CA3AC6 /* Timeline.swift in Sources */,
 				4CD31D18259E3D6A00CA3AC6 /* TimelineViewModel.swift in Sources */,
 				4CC7BE2025904FF60007E249 /* AuthViewModel.swift in Sources */,
+				4C01D49B25A40C7900BDDD5A /* TimelineCellViewModel.swift in Sources */,
 				4C26B811259479FC009BF379 /* SearchService.swift in Sources */,
 				4CC7BE1C259047120007E249 /* ImagePicker.swift in Sources */,
 				4CC7BE18259035B30007E249 /* SignUpView.swift in Sources */,

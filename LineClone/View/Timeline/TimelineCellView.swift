@@ -11,7 +11,16 @@ import KingfisherSwiftUI
 struct TimelineCellView: View {
     
     let timeline: Timeline
-    @State var isShowCommentView = false
+    @ObservedObject var viewModel: TimelineCellViewModel
+    
+    init(timeline: Timeline) {
+        self.timeline = timeline
+        self.viewModel = TimelineCellViewModel(timeline: timeline)
+    }
+    
+    func clearCommentText() {
+        viewModel.text = ""
+    }
     
     var body: some View {
         VStack {
@@ -32,20 +41,23 @@ struct TimelineCellView: View {
                     .padding(.horizontal).padding(.top)
             }
             HStack {
-                Button(action: {}, label: {
-                    Image(systemName: "heart")
+                Button(action: {
+                    viewModel.isLiked ? viewModel.unlike() : viewModel.like()
+                }, label: {
+                    Image(systemName: viewModel.isLiked ? "heart.fill" : "heart")
                         .frame(width: 32,height: 32)
-                        .foregroundColor(.black)
+                        .foregroundColor(viewModel.isLiked ? .red : .black)
                 })
-                Text("0")
-                Button(action: { self.isShowCommentView.toggle() }, label: {
+                Text("\(viewModel.likesCount)")
+                Button(action: { viewModel.isShowCommentView.toggle() }, label: {
                     Image(systemName: "bubble.right")
                         .frame(width: 32,height: 32).foregroundColor(.black)
                 })
-                .sheet(isPresented: $isShowCommentView, content: {
-                    CommentView()
+                .sheet(isPresented: $viewModel.isShowCommentView,onDismiss: clearCommentText ,content: {
+                    // viewModelを渡す
+                    CommentView(viewModel: viewModel)
                 })
-                Text("0")
+                Text("\(viewModel.commentsCount)")
                 Button(action: {}, label: {
                     Image(systemName: "square.and.arrow.up")
                         .frame(width: 32,height: 32).foregroundColor(.black)
@@ -53,7 +65,7 @@ struct TimelineCellView: View {
                 Spacer()
             }.padding(.leading,8)
             HStack {
-                Text("2020/12/31 12:54")
+                Text("\(viewModel.formatTimestamp())")
                 Spacer()
             }.padding(.leading,16)
         }

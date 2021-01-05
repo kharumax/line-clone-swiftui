@@ -29,7 +29,7 @@ func COLLECTION_USER_LIKES(uid: String) -> CollectionReference {
 }
 
 let COLLECTION_TIMELINES = Firestore.firestore().collection("timelines")
-func COLLECTION_TIMELINE_LIKESS(timelineId: String) -> CollectionReference {
+func COLLECTION_TIMELINE_LIKES(timelineId: String) -> CollectionReference {
     return COLLECTION_TIMELINES.document(timelineId).collection("likes")
 }
 func COLLECTION_TIMELINE_COMMENTS(timelineId: String) -> CollectionReference {

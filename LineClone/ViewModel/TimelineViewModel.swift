@@ -43,7 +43,7 @@ class TimelineViewModel: ObservableObject {
                 return
             }
             guard let timeline = timeline else { return }
-            self.timelines.append(timeline)
+            self.timelines.insert(timeline, at: 0)
             self.isShowPostTimelineView.toggle()
         }
     }

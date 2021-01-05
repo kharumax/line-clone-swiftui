@@ -9,25 +9,28 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct CommentCellView: View {
+    
+    let comment: Comment
+    
     var body: some View {
         HStack(alignment: .top) {
-            Image("ironman")
+            KFImage(URL(string: comment.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 32,height: 32)
                 .cornerRadius(16)
                 .padding(.top,2)
             VStack(alignment: .leading) {
-                Text("ironman").font(.system(size: 18))
-                Text("Yes i think so ...")
+                Text(comment.username).font(.system(size: 18))
+                Text(comment.text)
             }
             Spacer()
         }.padding(.horizontal,8)
     }
 }
 
-struct CommentCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentCellView()
-    }
-}
+//struct CommentCellView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CommentCellView()
+//    }
+//}
