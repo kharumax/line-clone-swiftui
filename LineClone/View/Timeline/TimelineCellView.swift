@@ -6,26 +6,28 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct TimelineCellView: View {
     
+    let timeline: Timeline
     @State var isShowCommentView = false
     
     var body: some View {
         VStack {
             HStack {
-                Image("ironman")
+                KFImage(URL(string: timeline.profileImageUrl))
                     .resizable()
                     .frame(width: 50,height: 50)
                     .cornerRadius(25)
-                Text("ironman").font(.system(size: 24,weight: .semibold))
+                Text(timeline.username).font(.system(size: 24,weight: .semibold))
                 Spacer()
             }.padding(.leading,8)
-            Image("ironman")
+            KFImage(URL(string: timeline.imageUrl))
                 .resizable()
                 .scaledToFit()
             HStack {
-                Text("I am ironman ... ")
+                Text(timeline.caption)
                     .frame(maxWidth: .infinity,alignment: .leading)
                     .padding(.horizontal).padding(.top)
             }
@@ -60,8 +62,8 @@ struct TimelineCellView: View {
 
 
 
-struct TimeLineCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimelineCellView()
-    }
-}
+//struct TimeLineCellView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimelineCellView()
+//    }
+//}
