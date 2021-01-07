@@ -6,30 +6,41 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct RoomCellView: View {
+    
+    let room: Room
+    
+    func formatTimestamp(room: Room) -> String {
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "yyyy/MM/dd: HH:mm"
+        let dateString = dataFormatter.string(from: room.currentTimestamp.dateValue())
+        return dateString
+    }
+    
     var body: some View {
         HStack {
-            Image("ironman")
+            KFImage(URL(string: room.partnerProfileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 60,height: 60)
                 .cornerRadius(30)
             VStack(alignment: .leading) {
                 HStack {
-                    Text("ironman").font(.system(size: 22,weight: .semibold)).foregroundColor(.black)
+                    Text(room.partnerName).font(.system(size: 22,weight: .semibold)).foregroundColor(.black)
                     Spacer()
-                    Text("2020/12/31 20:58").font(.system(size: 12,weight: .light)).foregroundColor(.black)
+                    Text(formatTimestamp(room: room)).font(.system(size: 12,weight: .light)).foregroundColor(.black)
                 }
-                Text("yes cap,I think also . I am ironman .").lineLimit(2)
+                Text(room.currentMessage).lineLimit(2)
                     .foregroundColor(.gray)
             }
         }.padding(.horizontal).padding(.vertical,4)
     }
 }
 
-struct RoomCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        RoomCellView()
-    }
-}
+//struct RoomCellView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RoomCellView()
+//    }
+//}

@@ -17,7 +17,7 @@ class TimelineCellViewModel: ObservableObject {
     @Published var likesCount = 0
     @Published var commentsCount = 0
     @Published var text: String = ""
-    let user = AuthViewModel.authShared.user!
+    let user = AuthViewModel.authShared.user
     var isFormValid: Bool {
         return !text.isEmpty
     }
@@ -37,6 +37,7 @@ class TimelineCellViewModel: ObservableObject {
     }
     
     func checkIsLiked() {
+        guard let user = user else { return }
         TimelineService.checkIsLiked(userId: user.id, timelineId: timeline.id) { (isLiked, error) in
             if let error = error {
                 print("DEBUG: Error is \(error.localizedDescription)")
@@ -48,6 +49,7 @@ class TimelineCellViewModel: ObservableObject {
     }
     
     func like() {
+        guard let user = user else { return }
         TimelineService.like(userId: user.id, timelineId: timeline.id) { (error) in
             if let error = error {
                 print("DEBUG: Error is \(error.localizedDescription)")
@@ -59,6 +61,7 @@ class TimelineCellViewModel: ObservableObject {
     }
     
     func unlike() {
+        guard let user = user else { return }
         TimelineService.unlike(userId: user.id, timelineId: timeline.id) { (error) in
             if let error = error {
                 print("DEBUG: Error is \(error.localizedDescription)")
@@ -93,6 +96,7 @@ class TimelineCellViewModel: ObservableObject {
     }
     
     func postComment() {
+        guard let user = user else { return }
         TimelineService.postComment(timelineId: timeline.id, user: user, text: text) { (comment, error) in
             if let error = error {
                 print("DEBUG: Error is \(error.localizedDescription)")

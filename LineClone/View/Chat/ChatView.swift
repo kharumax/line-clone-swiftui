@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ChatView: View {
+    
+    @ObservedObject var viewModel = ChatViewModel()
+    
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(0..<10) { _ in
+                ForEach(viewModel.talkrooms) { room in
                     NavigationLink(
-                        destination: LazyView(TalkRoomView().navigationTitle("ironman")),
+                        destination: LazyView(TalkRoomView(roomId: room.id).navigationTitle(room.partnerName)),
                         label: {
-                            RoomCellView()
+                            RoomCellView(room: room)
                         })
                 }
             }
@@ -23,8 +26,8 @@ struct ChatView: View {
     }
 }
 
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
-    }
-}
+//struct ChatView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatView()
+//    }
+//}

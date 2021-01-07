@@ -13,7 +13,7 @@ class TimelineViewModel: ObservableObject {
     @Published var caption = ""
     @Published var selectedImage: UIImage?
     @Published var isShowPostTimelineView = false
-    let user = AuthViewModel.authShared.user!
+    let user = AuthViewModel.authShared.user
     var isPostValid: Bool {
         return (!caption.isEmpty && selectedImage != nil)
     }
@@ -35,6 +35,7 @@ class TimelineViewModel: ObservableObject {
     
     func postTimeline() {
         guard let selectedImage = selectedImage else { return }
+        guard let user = user else { return }
         TimelineService.postTimeline(user: user, caption: caption, image: selectedImage) { (timeline, error) in
             self.caption = ""
             self.selectedImage = nil

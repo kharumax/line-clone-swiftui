@@ -11,7 +11,7 @@ import KingfisherSwiftUI
 struct HomeView: View {
     
     @ObservedObject var viewModel = HomeViewModel()
-    let user = AuthViewModel.authShared.user!
+    let user = AuthViewModel.authShared.user
     
     func searchFriendUsers() {
         viewModel.searchFriendUsers()
@@ -21,11 +21,11 @@ struct HomeView: View {
         ZStack {
             VStack {
                 HStack {
-                    KFImage(URL(string: user.profileImageUrl))
+                    KFImage(URL(string: user!.profileImageUrl))
                         .resizable()
                         .frame(width: 80,height: 80)
                         .cornerRadius(40)
-                    Text(user.username).font(.system(size: 32,weight: .semibold))
+                    Text(user!.username).font(.system(size: 32,weight: .semibold))
                     Spacer()
                 }.padding(.bottom,24).padding(.top,16)
                 HStack {

@@ -39,11 +39,11 @@ struct PostTimelineView: View {
                 }).disabled(!viewModel.isPostValid)
             }.padding(.top,16).padding(.bottom,24).padding(.horizontal,16)
             HStack {
-                KFImage(URL(string: viewModel.user.profileImageUrl))
+                KFImage(URL(string: viewModel.user!.profileImageUrl))
                     .resizable()
                     .frame(width: 50,height: 50)
                     .cornerRadius(25)
-                Text(viewModel.user.username).font(.system(size: 24,weight: .semibold))
+                Text(viewModel.user!.username).font(.system(size: 24,weight: .semibold))
                 Spacer()
             }.padding(.leading,8)
             Button(action: { self.isShowImagePicker.toggle() }, label: {

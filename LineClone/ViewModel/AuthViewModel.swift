@@ -85,6 +85,7 @@ class AuthViewModel: ObservableObject {
             self.selectedImage = nil
             self.password = ""
             self.session = nil
+            self.user = nil
         }
     }
     

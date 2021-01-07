@@ -1,7 +1,10 @@
 #  <#Title#>
 
 次やること
-6. チャット機能の作成
+7. バグの修正＆実機確認　
+　→ログアウト時のnil compile error
+　→HomeViewとProfileViewからTalkRoomViewまで飛ぶ
+　→UIのFeedBackなど
 
 実装メモ
 UIの作成

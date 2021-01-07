@@ -21,7 +21,8 @@ class HomeViewModel: ObservableObject {
     }
     
     func fetchFriendUsers() {
-        HomeService.fetchFriendUser(uid: currentUid!) { (users, error) in
+        guard let currentUid = self.currentUid else { return }
+        HomeService.fetchFriendUser(uid: currentUid) { (users, error) in
             if let error = error {
                 self.error = error
                 return
