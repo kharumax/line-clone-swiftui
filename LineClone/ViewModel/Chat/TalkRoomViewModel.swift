@@ -39,6 +39,7 @@ class TalkRoomViewModel: ObservableObject {
         print("DEBUG: sendMessage is called and now message.count is \(self.messages.count)")
         guard let user = user else { return }
         ChatService.sendMessage(roomId: roomId, user: user, text: text) { (error) in
+            self.text = ""
             if let error = error {
                 print("DEBUG: Error is \(error.localizedDescription)")
             }

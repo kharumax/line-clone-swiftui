@@ -38,5 +38,20 @@ struct HomeService {
         }
     }
     
+    static func getRoomId(currentUid: String,userId: String,completion: @escaping(String?,Error?) -> Void) {
+        COLLECTION_USERS_ROOMS(uid: currentUid).whereField("partnerId", isEqualTo: userId).getDocuments { (snapshot, error) in
+            if let error = error {
+                completion(nil,error)
+                return
+            }
+            guard let documents = snapshot?.documents else {
+                completion(nil,nil)
+                return
+            }
+            let roomId = documents[0].documentID
+            print("DEBUG: roomId is \(roomId) / ProfileService")
+            completion(roomId,nil)
+        }
+    }
     
 }

@@ -30,13 +30,27 @@ struct ProfileActionButton: View {
                         ProfileUpdateView(viewModel: viewModel)
                     }
                 } else {
-                    Button(action: {
-                        viewModel.isFriendUser ? viewModel.startChat() : viewModel.addFriend()
-                    }, label: {
-                        Text(viewModel.isFriendUser ? "トークする" : "友達追加する")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20,weight: .semibold))
-                    }).padding()
+                    if viewModel.isFriendUser {
+                        if viewModel.roomId != nil {
+                            Button(action: {
+                                
+                            }, label: {
+                                NavigationLink(destination: TalkRoomView(roomId: viewModel.roomId!).navigationTitle(viewModel.user.username)) {
+                                    Text("トークする")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 20,weight: .semibold))
+                                }
+                            }).padding()
+                        }
+                    } else {
+                        Button(action: {
+                            viewModel.addFriend()
+                        }, label: {
+                            Text("友達追加する")
+                                .foregroundColor(.white)
+                                .font(.system(size: 20,weight: .semibold))
+                        }).padding()
+                    }
                 }
             }
         }

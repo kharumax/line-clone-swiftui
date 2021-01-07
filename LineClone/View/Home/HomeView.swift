@@ -21,12 +21,16 @@ struct HomeView: View {
         ZStack {
             VStack {
                 HStack {
-                    KFImage(URL(string: user!.profileImageUrl))
-                        .resizable()
-                        .frame(width: 80,height: 80)
-                        .cornerRadius(40)
-                    Text(user!.username).font(.system(size: 32,weight: .semibold))
-                    Spacer()
+                    Group {
+                        if user != nil {
+                            KFImage(URL(string: user!.profileImageUrl))
+                                .resizable()
+                                .frame(width: 80,height: 80)
+                                .cornerRadius(40)
+                            Text(user!.username).font(.system(size: 32,weight: .semibold))
+                            Spacer()
+                        }
+                    }
                 }.padding(.bottom,24).padding(.top,16)
                 HStack {
                     Text("友だち").foregroundColor(.gray).font(.system(size: 32,weight: .bold))
@@ -48,8 +52,8 @@ struct HomeView: View {
                     viewModel.releaseUser()
                 }
             })
-            if viewModel.isShowModalView && viewModel.selectedUser != nil {
-                FriendModalView(user: viewModel.selectedUser!)
+            if viewModel.isShowModalView && viewModel.selectedUser != nil && viewModel.roomId != nil {
+                FriendModalView(user: viewModel.selectedUser!,roomId: viewModel.roomId!)
             }
         }
     }

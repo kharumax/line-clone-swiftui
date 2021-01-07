@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
     @Published var selectedUser: User?
     @Published var friendUsers = [User]()
     @Published var error: Error?
+    @Published var roomId: String?
     let currentUid = AuthViewModel.authShared.session?.uid
     
     init() {
@@ -34,12 +35,22 @@ class HomeViewModel: ObservableObject {
     
     func selectUser(user: User) {
         self.selectedUser = user
+        guard let currentUid = currentUid else { return }
+        HomeService.getRoomId(currentUid: currentUid, userId: user.id) { (roomId, error) in
+            if let error = error {
+                print("Error: Error is \(error.localizedDescription)")
+                return
+            }
+            guard let roomId = roomId else { return }
+            self.roomId = roomId
+        }
         self.isShowModalView = true
     }
     
     func releaseUser() {
         self.selectedUser = nil
         self.isShowModalView = false
+        self.roomId = nil
     }
     
     func searchFriendUsers() {

@@ -12,12 +12,12 @@ class ProfileViewModel: ObservableObject {
     @Published var user: User
     @Published var isCurrentUser: Bool
     @Published var isFriendUser = false
-    //@Published var isEditProfile = false
     @Published var isShowProfileEditView = false
     @Published var error: Error?
     @Published var username: String
     @Published var bio: String
     @Published var selectedImage: UIImage?
+    @Published var roomId: String?
     private let currentUid = AuthViewModel.authShared.session?.uid // user in LoggedIn
     
     init(user: User) {
@@ -34,12 +34,13 @@ class ProfileViewModel: ObservableObject {
         guard let currentUid = self.currentUid else { return }
         ProfileService.IsFriendUser(currentUid: currentUid, uid: user.id) { (isFriendUser, error) in
             if let error = error {
-                print("DEBUG: IsFriendUser is error")
                 self.error = error
                 return
             }
-            print("DEBUG: IsFriendUser , value is \(isFriendUser.debugDescription)")
-            self.isFriendUser = isFriendUser!
+            print("DEBUG: isFriendUser is \(isFriendUser) / ProfileViewModel")
+            guard let isFriendUser = isFriendUser else { return }
+            self.isFriendUser = isFriendUser
+            self.getRoomInfo()
         }
     }
     
@@ -63,6 +64,7 @@ class ProfileViewModel: ObservableObject {
                             self.error = error
                             return
                         }
+                        self.getRoomInfo()
                     }
                 }
             }
@@ -99,9 +101,23 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
-    func startChat() {
+    func getRoomInfo() {
         // トークルームの情報を取得して、Viewを移動する
-        print("DEBUG: StartChat")
+        //guard isFriendUser == true && isCurrentUser == false else { return }
+        print("DEBUG: isCurrentUser is \(isCurrentUser) / ProfileViewModel / getRoomInfo")
+        print("DEBUG: isFriendUser is \(isFriendUser) / ProfileViewModel / getRoomInfo")
+        if !isCurrentUser && isFriendUser {
+            guard let currentUid = currentUid else { return }
+            print("DEBUG: getRoomInfo is called")
+            ProfileService.getRoomId(currentUid: currentUid, userId: user.id) { (roomId, error) in
+                if let error = error {
+                    print("Error: Error is \(error.localizedDescription)")
+                    return
+                }
+                guard let roomId = roomId else { return }
+                self.roomId = roomId
+            }
+        }
     }
     
 }

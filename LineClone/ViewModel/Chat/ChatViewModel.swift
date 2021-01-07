@@ -18,7 +18,8 @@ class ChatViewModel: ObservableObject {
     }
     
     func fetchTalkrooms() {
-        ChatService.fetchTalkrooms(currentUid: currentUid!) { (rooms, error) in
+        guard let currentUid = currentUid else { return }
+        ChatService.fetchTalkrooms(currentUid: currentUid) { (rooms, error) in
             if let error = error {
                 print("DEBUG: Error is \(error.localizedDescription)")
                 return

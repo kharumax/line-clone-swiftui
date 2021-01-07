@@ -11,6 +11,7 @@ import KingfisherSwiftUI
 struct FriendModalView: View {
     
     let user: User
+    let roomId: String
     @State var isShowProfileView = false
     
     var body: some View {
@@ -23,9 +24,12 @@ struct FriendModalView: View {
             Text(user.bio ?? "").foregroundColor(.gray).font(.system(size: 20)).padding(.bottom,16)
             VStack(spacing: 10) {
                 Button(action: {}, label: {
-                    Text("トーク").foregroundColor(.white)
-                        .padding(.horizontal).padding(.vertical,8)
-                        .font(.system(size: 20,weight: .semibold))
+                    NavigationLink(destination: TalkRoomView(roomId: roomId).navigationTitle(user.username)) {
+                        Text("トーク").foregroundColor(.white)
+                            .padding(.horizontal).padding(.vertical,8)
+                            .font(.system(size: 20,weight: .semibold))
+                    }
+                    
                 }).background(Color.green).cornerRadius(10)
                 NavigationLink(
                     destination: ProfileView(user: user),

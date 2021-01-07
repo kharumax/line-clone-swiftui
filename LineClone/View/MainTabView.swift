@@ -46,14 +46,18 @@ struct MainTabView: View {
                         Image(systemName: "clock.fill")
                         Text("タイムライン")
                     }.tag(3)
-                ProfileView(user: viewModel.user!)
-                    .onTapGesture {
-                        selectedIndex = 4
+                Group {
+                    if viewModel.user != nil {
+                        ProfileView(user: viewModel.user!)
+                            .onTapGesture {
+                                selectedIndex = 4
+                            }
+                            .tabItem {
+                                Image(systemName: "person.fill")
+                                Text("プロフィール")
+                            }.tag(4)
                     }
-                    .tabItem {
-                        Image(systemName: "person.fill")
-                        Text("プロフィール")
-                    }.tag(4)
+                }
             }
     }
 }
