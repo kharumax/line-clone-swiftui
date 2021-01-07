@@ -61,10 +61,6 @@ struct ProfileView: View {
             }
         }
     }
-    
-    func profileButtonAction() {
-        print("")
-    }
 }
 
 //struct ProfileView_Previews: PreviewProvider {

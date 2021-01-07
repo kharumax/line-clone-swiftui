@@ -16,6 +16,10 @@
 		4C26B80A25946DD5009BF379 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B80925946DD5009BF379 /* SearchBar.swift */; };
 		4C26B80E25947912009BF379 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B80D25947912009BF379 /* SearchViewModel.swift */; };
 		4C26B811259479FC009BF379 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C26B810259479FC009BF379 /* SearchService.swift */; };
+		4C36103625A68C58009742F0 /* RoomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36103525A68C58009742F0 /* RoomCellView.swift */; };
+		4C36103925A691F7009742F0 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36103825A691F7009742F0 /* LazyView.swift */; };
+		4C36103D25A69280009742F0 /* TalkRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36103C25A69280009742F0 /* TalkRoomView.swift */; };
+		4C36104125A6928E009742F0 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36104025A6928E009742F0 /* MessageCellView.swift */; };
 		4C3947B825962B9E00809398 /* ProfileUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3947B725962B9E00809398 /* ProfileUpdateView.swift */; };
 		4C459F15258E70C100356166 /* LineCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F14258E70C100356166 /* LineCloneApp.swift */; };
 		4C459F17258E70C100356166 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F16258E70C100356166 /* ContentView.swift */; };
@@ -23,7 +27,7 @@
 		4C459F1C258E70C500356166 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C459F1B258E70C500356166 /* Preview Assets.xcassets */; };
 		4C459F2A258E72C400356166 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F29258E72C400356166 /* MainTabView.swift */; };
 		4C459F32258E765700356166 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F31258E765700356166 /* HomeView.swift */; };
-		4C459F36258E766500356166 /* TalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F35258E766500356166 /* TalkView.swift */; };
+		4C459F36258E766500356166 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F35258E766500356166 /* ChatView.swift */; };
 		4C459F39258E766F00356166 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C459F38258E766F00356166 /* TimelineView.swift */; };
 		4CC2086D259B11D800B36F26 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2086C259B11D800B36F26 /* Room.swift */; };
 		4CC7BE14259035960007E249 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7BE13259035960007E249 /* LoginView.swift */; };
@@ -64,6 +68,10 @@
 		4C26B80925946DD5009BF379 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		4C26B80D25947912009BF379 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		4C26B810259479FC009BF379 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		4C36103525A68C58009742F0 /* RoomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCellView.swift; sourceTree = "<group>"; };
+		4C36103825A691F7009742F0 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		4C36103C25A69280009742F0 /* TalkRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkRoomView.swift; sourceTree = "<group>"; };
+		4C36104025A6928E009742F0 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
 		4C3947B725962B9E00809398 /* ProfileUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateView.swift; sourceTree = "<group>"; };
 		4C459F11258E70C100356166 /* LineClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LineClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C459F14258E70C100356166 /* LineCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCloneApp.swift; sourceTree = "<group>"; };
@@ -73,7 +81,7 @@
 		4C459F1D258E70C500356166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C459F29258E72C400356166 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4C459F31258E765700356166 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		4C459F35258E766500356166 /* TalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkView.swift; sourceTree = "<group>"; };
+		4C459F35258E766500356166 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		4C459F38258E766F00356166 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		4CC2086C259B11D800B36F26 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		4CC7BE13259035960007E249 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -131,6 +139,15 @@
 				4C26B80925946DD5009BF379 /* SearchBar.swift */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		4C36103B25A69244009742F0 /* TalkRoom */ = {
+			isa = PBXGroup;
+			children = (
+				4C36103C25A69280009742F0 /* TalkRoomView.swift */,
+				4C36104025A6928E009742F0 /* MessageCellView.swift */,
+			);
+			path = TalkRoom;
 			sourceTree = "<group>";
 		};
 		4C459F08258E70C100356166 = {
@@ -206,7 +223,7 @@
 				4CC7BE122590357E0007E249 /* Authentication */,
 				4C459F2E258E762900356166 /* Home */,
 				4CF519A8258E7AA8007BACE4 /* Search */,
-				4C459F2F258E762F00356166 /* Talk */,
+				4C459F2F258E762F00356166 /* Chat */,
 				4C459F30258E763500356166 /* Timeline */,
 				4C26B7FD25933430009BF379 /* Profile */,
 				4C26B8022593352E009BF379 /* Share */,
@@ -246,12 +263,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		4C459F2F258E762F00356166 /* Talk */ = {
+		4C459F2F258E762F00356166 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				4C459F35258E766500356166 /* TalkView.swift */,
+				4C36103B25A69244009742F0 /* TalkRoom */,
+				4C459F35258E766500356166 /* ChatView.swift */,
+				4C36103525A68C58009742F0 /* RoomCellView.swift */,
 			);
-			path = Talk;
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		4C459F30258E763500356166 /* Timeline */ = {
@@ -278,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				4CC7BE1B259047120007E249 /* ImagePicker.swift */,
+				4C36103825A691F7009742F0 /* LazyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,8 +405,9 @@
 				4C459F32258E765700356166 /* HomeView.swift in Sources */,
 				4CD31D1F259E3E9700CA3AC6 /* TimelineService.swift in Sources */,
 				4CD31D00259DB60000CA3AC6 /* FriendCell.swift in Sources */,
+				4C36103925A691F7009742F0 /* LazyView.swift in Sources */,
 				4CF519AA258E7AC6007BACE4 /* SearchView.swift in Sources */,
-				4C459F36258E766500356166 /* TalkView.swift in Sources */,
+				4C459F36258E766500356166 /* ChatView.swift in Sources */,
 				4CD31D15259E366A00CA3AC6 /* CommentView.swift in Sources */,
 				4C459F15258E70C100356166 /* LineCloneApp.swift in Sources */,
 				4C253E15259488F500D1D4FE /* ProfileViewModel.swift in Sources */,
@@ -395,6 +416,8 @@
 				4C3947B825962B9E00809398 /* ProfileUpdateView.swift in Sources */,
 				4CC7BE38259089C90007E249 /* User.swift in Sources */,
 				4CD31D0D259E038D00CA3AC6 /* TimelineCellView.swift in Sources */,
+				4C36104125A6928E009742F0 /* MessageCellView.swift in Sources */,
+				4C36103D25A69280009742F0 /* TalkRoomView.swift in Sources */,
 				4C26B8052593354A009BF379 /* UserCellView.swift in Sources */,
 				4CD31D0A259DD27100CA3AC6 /* HomeService.swift in Sources */,
 				4C26B7FF259334A3009BF379 /* ProfileView.swift in Sources */,
@@ -416,6 +439,7 @@
 				4CC7BE2F259053380007E249 /* Constants.swift in Sources */,
 				4C253E1825948D9900D1D4FE /* ProfileService.swift in Sources */,
 				4CD31D22259EC11100CA3AC6 /* PostTimelineView.swift in Sources */,
+				4C36103625A68C58009742F0 /* RoomCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

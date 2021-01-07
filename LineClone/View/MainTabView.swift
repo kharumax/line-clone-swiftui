@@ -30,7 +30,7 @@ struct MainTabView: View {
                         Image(systemName: "magnifyingglass")
                         Text("検索")
                     }.tag(1)
-                TalkView()
+                ChatView()
                     .onTapGesture {
                         selectedIndex = 2
                     }
